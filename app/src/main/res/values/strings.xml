@@ -1,48 +1,31 @@
-<!-- Copyright (C) 2016 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?>
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
 <resources>
-    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <!-- Title for the application. -->
     <string name="app_name">African American Heritage Trail</string>
 
-    <!-- Category name for phrases [CHAR LIMIT=20] -->
+    <!-- Category name for History -->
     <string name="category_history">History</string>
 
-    <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
+    <!-- Category name for Maps -->
     <string name="category_map">Maps</string>
 
-    <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
+    <!-- Category name for People -->
     <string name="category_people">People</string>
 
-    <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
+    <!-- Category name for Timeline -->
     <string name="category_timeline">Timeline</string>
 
-    <!-- Read pdf data -->
+
+
+    <!-- Source data -->
+    <string name="info">Info</string>
+
     <string name="intro_message">
         <![CDATA[
-       African American Heritage Trail: Cambridge, Massachusetts. Cambridge, MA: Cambridge Historical Commission. January 2000. 28 p.
+       Source: African American Heritage Trail: Cambridge, Massachusetts. Cambridge, MA: Cambridge Historical Commission. January 2000. 28 p.
         ]]>
     </string>
-
-
-    <!-- <string name="app_name_with_index">History (%1$d/%2$d)</string> -->
-    <!-- only 1 pdf per person so not necessary to display pages -->
-    <string name="app_name_with_index">History</string>
-    <string name="info">Info</string>
-    <string name="previous">Previous</string>
-    <string name="next">Next</string>
-
 
     <!-- People and Maps values -->
 
@@ -56,13 +39,12 @@
     <string name="date2">1883&#8211;1961</string>
     <string name="title2">Educator, Lecturer, Social Worker</string>
 
-
     <string name="name3">William Wells Brown</string>
     <string name="address3">29 Webster Ave., Cambridge, MA 02141</string>
     <string name="date3">c.1814&#8211;1884</string>
     <string name="title3">Abolitionist, Physician, Lecturer</string>
 
-    <string name="name4">J. Milton Clarke, Lewis Clark</string>
+    <string name="name4">J. Milton Clarke, Lewis Clarke</string>
     <string name="address4">2 Florence Street, Cambridge, MA 02139</string>
     <string name="date4">1820&#8211;1902, 1818&#8211;1897</string>
     <string name="title4">Writers and Lecturers</string>
@@ -147,33 +129,31 @@
     <string name="date20">1880&#8211;1933</string>
     <string name="title20">Officeholder, Community Leader</string>
 
-
     <!-- Timeline values -->
 
     <string name="timedate1">Introduction</string>
-    <string name="timetopic1">African Americans in Cambridge</string>
+    <string name="timetopic1">African Americans in Cambridge, MA</string>
 
     <string name="timedate2">1600s</string>
-    <string name="timetopic2">Slavery in Cambridge</string>
+    <string name="timetopic2">Slavery in Cambridge, MA</string>
 
     <string name="timedate3">1700s</string>
     <string name="timetopic3">Revolutionary War</string>
 
     <string name="timedate4">1800&#8211;1839</string>
-    <string name="timetopic4">Northward Migration</string>
+    <string name="timetopic4">Settlements</string>
 
     <string name="timedate5">1840s and 1850s</string>
     <string name="timetopic5">Building Communities</string>
 
-    <string name="timedate6">1860s-1898</string>
+    <string name="timedate6">1860s-1890s</string>
     <string name="timetopic6">Families and Schools</string>
 
-    <string name="histdate7">1899&#8211;1920s</string>
-    <string name="histtopic7">Professiontt1;1960</string>
-    <string name="timetopic8">Professions and Education</string>
+    <string name="timedate7">1890s&#8211;1920s</string>
+    <string name="timetopic7">Professions and Education</string>
 
-    <string name="timedate9">1930&#8211;1960</string>
-    <string name="timetopic9">Valuable Contributions to Cambridge</string>
+    <string name="timedate8">1930&#8211;1960</string>
+    <string name="timetopic8">Valuable Contributions</string>
 
 
 </resources>

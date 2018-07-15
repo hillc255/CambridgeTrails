@@ -15,7 +15,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subclass based on Miwok Application in class
  */
 public class TimelineFragment extends Fragment {
 
@@ -40,28 +40,18 @@ public class TimelineFragment extends Fragment {
 
     /**
      * This listener gets triggered whenever the audio focus changes
-     * (i.e., we gain or lose audio focus because of another app or device).
      */
     private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
         @Override
         public void onAudioFocusChange(int focusChange) {
             if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT ||
                     focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-                // The AUDIOFOCUS_LOSS_TRANSIENT case means that we've lost audio focus for a
-                // short amount of time. The AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK case means that
-                // our app is allowed to continue playing sound but at a lower volume. We'll treat
-                // both cases the same way because our app is playing short sound files.
-
-                // Pause playback and reset player to the start of the file. That way, we can
-                // play the word from the beginning when we resume playback.
                 mMediaPlayer.pause();
                 mMediaPlayer.seekTo(0);
+                mMediaPlayer.stop();
             } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-                // The AUDIOFOCUS_GAIN case means we have regained focus and can resume playback.
                 mMediaPlayer.start();
             } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-                // The AUDIOFOCUS_LOSS case means we've lost audio focus and
-                // Stop playback and clean up resources
                 releaseMediaPlayer();
             }
         }
@@ -73,40 +63,30 @@ public class TimelineFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.site_list, container, false);
 
-        /** TODO: Insert all the code from the FamilyActivity’s onCreate() method after the setContentView method call */
         // Create and setup the {@link AudioManager} to request audio focus
-        //fix fragment: mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
 
-        // Create a list of words
+        // Create a list of timeline sites
         final ArrayList<Site> sites = new ArrayList<Site>();
-        sites.add(new Site("Introduction", "African Americans in Cambridge", R.raw.color_black));
-        sites.add(new Site("1600s", "Slavery in Cambridge", R.raw.color_black));
-        sites.add(new Site("1700s", "Revolutionary War", R.raw.color_black));
-        sites.add(new Site("1800-1839", "Northward Migration", R.raw.color_black));
-        sites.add(new Site("1840s and 1850s", "Building Communities", R.raw.color_black));
-        sites.add(new Site("1860s-1898", "Families and Schools", R.raw.color_black));
-        sites.add(new Site("1899-1920s", "Professions and Education", R.raw.color_black));
-        sites.add(new Site("1930-1960", "Valuable Contributions to Cambridge", R.raw.color_black));
+        sites.add(new Site(getString(R.string.timedate1),getString(R.string.timetopic1), R.raw.time1));
+        sites.add(new Site(getString(R.string.timedate2), getString(R.string.timetopic2), R.raw.time2));
+        sites.add(new Site(getString(R.string.timedate3),getString(R.string.timetopic3), R.raw.time3));
+        sites.add(new Site(getString(R.string.timedate4), getString(R.string.timetopic4), R.raw.time4));
+        sites.add(new Site(getString(R.string.timedate5), getString(R.string.timetopic5), R.raw.time5));
+        sites.add(new Site(getString(R.string.timedate6), getString(R.string.timetopic6), R.raw.time6));
+        sites.add(new Site(getString(R.string.timedate7), getString(R.string.timetopic7), R.raw.time7));
+        sites.add(new Site(getString(R.string.timedate8), getString(R.string.timetopic8), R.raw.time8));
 
 
-        // Create an {@link SiteAdapter}, whose data source is a list of {@link Site}s. The
-        // adapter knows how to create list items for each item in the list.
-        //  SiteAdapter adapter = new SiteAdapter(this, words);
-        //fix fragment: SiteAdapter adapter = new SiteAdapter(this, words, R.color.category_family);
+        // Create an {@link SiteAdapter}, whose data source is a list of {@link Site}s.
         SiteAdapter adapter = new SiteAdapter(getActivity(), sites, R.color.category_timeline);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
-        // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // site_list.xml file.
-
-        //fix fragment:   ListView listView = (ListView) findViewById(R.id.list);
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        ListView listView = rootView.findViewById(R.id.list);
 
 
-        // Make the {@link ListView} use the {@link SiteAdapter} we created above, so that the
-        // {@link ListView} will display list items for each {@link Site} in the list.
+        // Make the {@link ListView} use the {@link SiteAdapter} created
         listView.setAdapter(adapter);
 
         // Set a click listener to play the audio when the list item is clicked on
@@ -121,24 +101,14 @@ public class TimelineFragment extends Fragment {
                 // Get the {@link Site} object at the given position the user clicked on
                 Site site = sites.get(position);
 
-                // Request audio focus so in order to play the audio file. The app needs to play a
-                // short audio file, so we will request audio focus with a short amount of time
-                // with AUDIOFOCUS_GAIN_TRANSIENT.
+                // Request audio focus so in order to play the audio file.
                 int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
                         AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    // We have audio focus now.
-
-                    // Create and setup the {@link MediaPlayer} for the audio resource associated
-                    // with the current word
-                    //fix fragment:  mMediaPlayer = MediaPlayer.create(FamilyActivity.this, word.getAudioResourceId());
                     mMediaPlayer = MediaPlayer.create(getActivity(), site.getAudioResourceId());
 
-                    // Start the audio file
                     mMediaPlayer.start();
-                    // Setup a listener on the media player, so that we can stop and release the
-                    // media player once the sound has finished playing.
                     mMediaPlayer.setOnCompletionListener(mCompletionListener);
                 }
             }
@@ -146,13 +116,10 @@ public class TimelineFragment extends Fragment {
         return rootView;
     }
 
-
+     //stop and release media player
     @Override
     public void onStop() {
         super.onStop();
-
-        // When the activity is stopped, release the media player resources because we won't
-        // be playing any more sounds.
         releaseMediaPlayer();
     }
 
@@ -160,20 +127,13 @@ public class TimelineFragment extends Fragment {
      * Clean up the media player by releasing its resources.
      */
     private void releaseMediaPlayer() {
-        // If the media player is not null, then it may be currently playing a sound.
-        if (mMediaPlayer != null) {
-            // Regardless of the current state of the media player, release its resources
-            // because we no longer need it.
-            mMediaPlayer.release();
 
-            // Set the media player back to null. For our code, we've decided that
-            // setting the media player to null is an easy way to tell that the media player
-            // is not configured to play an audio file at the moment.
+        if (mMediaPlayer != null) {
+
+            mMediaPlayer.release();
             mMediaPlayer = null;
 
-            // Regardless of whether or not we were granted audio focus, abandon it. This also
-            // unregisters the AudioFocusChangeListener so we don't get anymore callbacks.
-            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
+               mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
     }
 
