@@ -12,7 +12,7 @@ import android.app.ActionBar;
 
 import java.util.Stack;
 
-
+ // Main class for Site - based on Miwok Application
 public class MainActivity extends AppCompatActivity {
 
 

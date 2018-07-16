@@ -11,7 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subclass  - based on Miwok Application
  */
 public class MapFragment extends Fragment {
 

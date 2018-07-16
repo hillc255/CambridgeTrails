@@ -13,8 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * {@link SiteAdapter} is an {@link ArrayAdapter} that can provide the layout for each list item
- * based on a data source, which is a list of {@link Site} objects.
+ * {@link SiteAdapter} is an {@link ArrayAdapter} that can provide the layout for each list item - based on Miwok Application
  */
 public class SiteAdapter extends ArrayAdapter<Site> {
 

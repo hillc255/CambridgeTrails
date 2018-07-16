@@ -15,7 +15,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 /**
- * A simple {@link Fragment} subclass based on Miwok Application in class
+ * A simple {@link Fragment} subclass - based on Miwok Application
  */
 public class TimelineFragment extends Fragment {
 
