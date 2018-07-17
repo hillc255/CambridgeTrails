@@ -6,17 +6,21 @@
 
     <!-- Category name for History -->
     <string name="category_history">History</string>
-
     <!-- Category name for Maps -->
     <string name="category_map">Maps</string>
-
     <!-- Category name for People -->
     <string name="category_people">People</string>
-
     <!-- Category name for Timeline -->
     <string name="category_timeline">Timeline</string>
 
+    <!-- Placeholder text -->
+    <string name="placeholder_text">site name</string>
+    <string name="placeholder_date">site date</string>
 
+    <!-- Layout content descriptions -->
+    <string name="dialog_popup">Document associated with each person in fragment.</string>
+    <string name="siteimage">Photo associated with each person in fragment </string>
+    <string name="play_icon">Image of play icon arrow</string>
 
     <!-- Source data -->
     <string name="info">Info</string>
