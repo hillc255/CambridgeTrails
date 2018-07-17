@@ -4,6 +4,10 @@
     <!-- Title for the application. -->
     <string name="app_name">African American Heritage Trail</string>
 
+    <!-- Toolbar title and subtitle -->
+    <string name="toolbar_title">African American Heritage Trail</string>
+    <string name="toolbar_subtitle">Cambridge, MA</string>
+
     <!-- Category name for History -->
     <string name="category_history">History</string>
     <!-- Category name for Maps -->

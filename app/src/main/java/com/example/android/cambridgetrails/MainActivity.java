@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("African American Heritage Trail");
-        toolbar.setSubtitle("Cambridge, MA");
+        getSupportActionBar().setTitle(R.string.toolbar_title);
+        toolbar.setSubtitle(R.string.toolbar_subtitle);
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setSubtitleTextColor(Color.WHITE);
 
