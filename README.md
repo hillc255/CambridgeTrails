@@ -25,13 +25,14 @@ ActivityMain, Fragments:  People, Timeline, Maps, History, Dialog
 Structure of the code derives from the Miwok application used in class:
 https://github.com/udacity/ud839_Miwok
 
-Source of content:  
+Source of content with permission from the Cambridge Historical Commission:
+African American Heritage Trail: Cambridge, Massachusetts. Cambridge, MA: Cambridge Historical Commission. January 2000. 28 p. 
 
 ## Motivation
 
 This is the fifth exercise in the "Grow with Google - Android Basic Development Nanodegree Scholarship 2018" program with Udacity.
 
-The purpose of the exercise is to create "musical structuretravel app."
+The purpose of the exercise is to create "travel app."
 
 ## Installation
 
