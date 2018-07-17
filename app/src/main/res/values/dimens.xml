@@ -17,4 +17,6 @@
     <dimen name="arrow_marginRight">16dp</dimen>
     <dimen name="arrow_marginEnd">16dp</dimen>
 
+    <dimen name="toolbar_height">70dp</dimen>
+
 </resources>

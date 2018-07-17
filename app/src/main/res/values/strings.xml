@@ -37,7 +37,7 @@
     <string name="name1">Maria Baldwin</string>
     <string name="address1">32 Sacramento St., Cambridge, MA 02138</string>
     <string name="date1">1856&#8211;1922</string>
-    <string name="title1">Educator, Lecturer, Community Activist</string>
+    <string name="title1">Educator, Community Activist</string>
 
     <string name="name2">Charlotte Hawkins Brown</string>
     <string name="address2">55 Essex St., Cambridge, MA 02139</string>
@@ -49,7 +49,7 @@
     <string name="date3">c.1814&#8211;1884</string>
     <string name="title3">Abolitionist, Physician, Lecturer</string>
 
-    <string name="name4">J. Milton Clarke, Lewis Clarke</string>
+    <string name="name4">J. M. Clarke, L. Clarke</string>
     <string name="address4">2 Florence Street, Cambridge, MA 02139</string>
     <string name="date4">1820&#8211;1902, 1818&#8211;1897</string>
     <string name="title4">Writers and Lecturers</string>
@@ -82,7 +82,7 @@
     <string name="name10">Harriet A. Jacobs</string>
     <string name="address10">17 Story St., Cambridge, MA 02138</string>
     <string name="date10">1813&#8211;1897</string>
-    <string name="title10">Abolitionist, Women\'s Rights  Advocate</string>
+    <string name="title10">Abolitionist, Women\'s Advocate</string>
 
     <string name="name11">Lunsford Lane</string>
     <string name="address11">44 Webster Ave., Cambridge, MA 02141</string>
@@ -94,7 +94,7 @@
     <string name="date12">1868&#8211;1949</string>
     <string name="title12">All-American Football, Lawyer</string>
 
-    <string name="name13">Bishop George A. McGuire</string>
+    <string name="name13">Bishop G. A. McGuire</string>
     <string name="address13">137 Allston St., Cambridge, MA 02139</string>
     <string name="date13">1866&#8211;1934</string>
     <string name="title13">Founder, African Orthodox Church</string>
@@ -112,7 +112,7 @@
     <string name="name16">Patrick H. Raymond</string>
     <string name="address16">10 Pleasant St., Cambridge, MA 02139</string>
     <string name="date16">1831&#8211;1892</string>
-    <string name="title16">Civil War Vet, Newspaper Editor, Fire Chief</string>
+    <string name="title16">Civil War Vet, Editor, Fire Chief</string>
 
     <string name="name17">Alberta V. Scott</string>
     <string name="address17">28 Union St., Cambridge, MA 02141</string>
@@ -137,10 +137,10 @@
     <!-- Timeline values -->
 
     <string name="timedate1">Introduction</string>
-    <string name="timetopic1">African Americans in Cambridge, MA</string>
+    <string name="timetopic1">African Americans in Cambridge</string>
 
     <string name="timedate2">1600s</string>
-    <string name="timetopic2">Slavery in Cambridge, MA</string>
+    <string name="timetopic2">Slavery in Cambridge</string>
 
     <string name="timedate3">1700s</string>
     <string name="timetopic3">Revolutionary War</string>

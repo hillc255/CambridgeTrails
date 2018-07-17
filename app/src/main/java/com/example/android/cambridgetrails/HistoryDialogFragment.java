@@ -5,6 +5,8 @@ import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -15,6 +17,9 @@ import android.widget.LinearLayout;
  * A simple dialog fragment to display history documents
  */
 public class HistoryDialogFragment extends DialogFragment {
+
+
+    private ImageView mImageView;
 
     public HistoryDialogFragment() {
     }
@@ -29,15 +34,18 @@ public class HistoryDialogFragment extends DialogFragment {
         int mValue = Integer.parseInt(mKey);
 
         // set the image in the view
-        ImageView imageView = view.findViewById(R.id.text_title);
-        imageView.setImageResource(mValue);
+        mImageView = view.findViewById(R.id.text_title);
+        mImageView.setImageResource(mValue);
+
 
         // build dialog for display
         Dialog builder = new Dialog(getActivity());
         builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
         builder.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         builder.setContentView(view);
+
         return builder;
     }
+
 
 }
