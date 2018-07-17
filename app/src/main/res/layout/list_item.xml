@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Layout for a single list item -->
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_listitem"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height"
     android:background="@color/tan_background"
-    android:id="@+id/container_listitem"
     android:minHeight="@dimen/list_item_height">
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
-        android:contentDescription="@string/siteimage"/>
+        android:contentDescription="@string/siteimage" />
 
     <RelativeLayout
         android:id="@+id/text_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@id/image"
         android:layout_toEndOf="@id/image"
+        android:layout_toRightOf="@id/image"
         android:orientation="vertical"
         android:paddingLeft="@dimen/list_item_paddingLeft"
-        android:paddingStart="@dimen/list_item_paddingLeft" >
+        android:paddingStart="@dimen/list_item_paddingLeft">
 
         <TextView
             android:id="@+id/trail_text_view"
@@ -38,30 +37,31 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            tools:text="@string/placeholder_text"/>
+            tools:text="@string/placeholder_text" />
 
         <TextView
             android:id="@+id/default_text_view"
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_textview_height"
             android:layout_below="@id/trail_text_view"
+            android:autoLink="map|web"
             android:gravity="top"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
-            android:autoLink="map|web"
+            android:textColorLink="@android:color/white"
             tools:text="@string/placeholder_date" />
 
         <ImageView
             android:id="@+id/arrow"
             android:layout_width="@dimen/arrow_width"
             android:layout_height="@dimen/arrow_height"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/arrow_marginRight"
             android:layout_marginEnd="@dimen/arrow_marginEnd"
+            android:layout_marginRight="@dimen/arrow_marginRight"
             android:contentDescription="@string/play_icon"
-            android:src="@drawable/ic_play_arrow"/>
+            android:src="@drawable/ic_play_arrow" />
 
     </RelativeLayout>
 </RelativeLayout>
