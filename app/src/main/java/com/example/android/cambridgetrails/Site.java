@@ -1,31 +1,34 @@
 package com.example.android.cambridgetrails;
 
 /**
- * {@Link Site represents a vocabulary word that the user wants to learn - based on Miwok Application
+ * Site class represents site objects - based on Miwok Application
  */
 public class Site {
 
     /**
-     * Default translation for the site - State
+     * Default translation for the site
      */
     private String mDefaultDate;
 
     /**
-     * Name associated with site - State
+     * Name associated with site
      */
     private String mTrailName;
 
 
-    /** Image resource ID for the site */
+    /**
+     * Image resource ID for the site and constant of none exists
+     */
     private int mImageResourceId = NO_IMAGE_PROVIDED;
-
-    /** Constant value that represents no image was provided for this site */
     private static final int NO_IMAGE_PROVIDED = -1;
 
+
+    /**
+     * Audio resource ID for the site and constant of none exists
+     */
     private int mAudioResourceId = NO_AUDIO_PROVIDED;
     private static final int NO_AUDIO_PROVIDED = -1;
 
-    //  private int mAudioResourceId;
 
     /**
      * Constructor - create new site object
@@ -44,11 +47,11 @@ public class Site {
      * Constructor - create new site object
      * Setters not needed because the site object will not change
      *
-     * @param vTrailName   is the site name
-     * @param vDefaultDate is the site date or subtitle
+     * @param vTrailName       is the site name
+     * @param vDefaultDate     is the site date or subtitle
      * @param vAudioResourceId is the associated audio resource
      */
-    public Site(String vDefaultDate, String vTrailName, int vAudioResourceId){
+    public Site(String vDefaultDate, String vTrailName, int vAudioResourceId) {
         mDefaultDate = vDefaultDate;
         mTrailName = vTrailName;
         mAudioResourceId = vAudioResourceId;
@@ -59,8 +62,8 @@ public class Site {
      * Constructor2 - create new word object
      * Setters not needed because the word object will not change
      *
-     * @param vTrailName   is the site name
-     * @param vDefaultDate is the site date or subtitle
+     * @param vTrailName       is the site name
+     * @param vDefaultDate     is the site date or subtitle
      * @param vImageResourceId is the drawable resource for the image
      * @param vAudioResourceId is the associated audio resource
      */
@@ -70,7 +73,6 @@ public class Site {
         mImageResourceId = vImageResourceId;
         mAudioResourceId = vAudioResourceId;
     }
-
 
 
     /**
@@ -97,14 +99,14 @@ public class Site {
      *
      * @return int
      */
-    public int getImageResourceId(){
+    public int getImageResourceId() {
         return mImageResourceId;
     }
 
     /**
      * Returns whether or not there is an image for this site.
      */
-    public boolean hasImage(){
+    public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 
@@ -114,11 +116,11 @@ public class Site {
      *
      * @return int
      */
-    public int getAudioResourceId(){
+    public int getAudioResourceId() {
         return mAudioResourceId;
     }
 
-    public boolean hasAudio(){
+    public boolean hasAudio() {
         return mAudioResourceId != NO_AUDIO_PROVIDED;
     }
 

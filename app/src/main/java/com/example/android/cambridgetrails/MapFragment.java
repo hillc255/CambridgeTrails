@@ -15,15 +15,10 @@ import java.util.ArrayList;
  */
 public class MapFragment extends Fragment {
 
-    //Context mContext;
-    // View listItemView;
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.site_list, container, false);
-
 
         // Create a list of words
         final ArrayList<Site> sites = new ArrayList<Site>();
@@ -49,24 +44,18 @@ public class MapFragment extends Fragment {
         sites.add(new Site(getString(R.string.address20), getString(R.string.name20)));
 
 
-        // Create an {@link SiteAdapter}, whose data source is a list of {@link Site}s. The
-        // adapter knows how to create list items for each item in the list.
-        // SiteAdapter adapter = new SiteAdapter(this, words);
-        //fix for fragments  - SiteAdapter adapter = new SiteAdapter(this, words, R.color.category_numbers);
+        // Create an {@link SiteAdapter}, whose data source is a list of {@link Site}s.
+        // The adapter knows how to create list items for each item in the list.
         SiteAdapter adapter = new SiteAdapter(getActivity(), sites, R.color.category_map);
 
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
-        // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // site_list.xml file.
-        //fixed for Fragment  ListView listView = (ListView) findViewById(R.id.list);
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        ListView listView = rootView.findViewById(R.id.list);
 
 
         // Make the {@link ListView} use the {@link SiteAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Site} in the list.
         listView.setAdapter(adapter);
-
 
         return rootView;
     }

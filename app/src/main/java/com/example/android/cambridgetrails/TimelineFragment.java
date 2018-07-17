@@ -19,10 +19,14 @@ import java.util.ArrayList;
  */
 public class TimelineFragment extends Fragment {
 
-    /** Handles playback of all the sound files */
+    /**
+     * Handles playback of all the sound files
+     */
     private MediaPlayer mMediaPlayer;
 
-    /** Handles audio focus when playing a sound file */
+    /**
+     * Handles audio focus when playing a sound file
+     */
     private AudioManager mAudioManager;
 
     /**
@@ -69,9 +73,9 @@ public class TimelineFragment extends Fragment {
 
         // Create a list of timeline sites
         final ArrayList<Site> sites = new ArrayList<Site>();
-        sites.add(new Site(getString(R.string.timedate1),getString(R.string.timetopic1), R.raw.time1));
+        sites.add(new Site(getString(R.string.timedate1), getString(R.string.timetopic1), R.raw.time1));
         sites.add(new Site(getString(R.string.timedate2), getString(R.string.timetopic2), R.raw.time2));
-        sites.add(new Site(getString(R.string.timedate3),getString(R.string.timetopic3), R.raw.time3));
+        sites.add(new Site(getString(R.string.timedate3), getString(R.string.timetopic3), R.raw.time3));
         sites.add(new Site(getString(R.string.timedate4), getString(R.string.timetopic4), R.raw.time4));
         sites.add(new Site(getString(R.string.timedate5), getString(R.string.timetopic5), R.raw.time5));
         sites.add(new Site(getString(R.string.timedate6), getString(R.string.timetopic6), R.raw.time6));
@@ -116,7 +120,7 @@ public class TimelineFragment extends Fragment {
         return rootView;
     }
 
-     //stop and release media player
+    //Stop and release media player
     @Override
     public void onStop() {
         super.onStop();
@@ -133,7 +137,7 @@ public class TimelineFragment extends Fragment {
             mMediaPlayer.release();
             mMediaPlayer = null;
 
-               mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
+            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
     }
 

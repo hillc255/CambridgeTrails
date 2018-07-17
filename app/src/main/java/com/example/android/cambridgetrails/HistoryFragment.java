@@ -65,19 +65,19 @@ public class HistoryFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                // get position of resource in site then id of resource
+                // Get position of resource in site then id of resource
                 Site site = sites.get(position);
                 int resourceId = site.getAudioResourceId();
 
-                // create dialog fragment
+                // Create dialog fragment
                 HistoryDialogFragment overlay = new HistoryDialogFragment();
 
-                // pass arguments to the dialog fragment as args.putString("key","value");
+                // Pass arguments to the dialog fragment as args.putString("key","value");
                 Bundle args = new Bundle();
                 args.putString("key", Integer.toString(resourceId));
                 overlay.setArguments(args);
 
-                //set up link to dialog
+                // Set up link to dialog
                 overlay.show(getFragmentManager().beginTransaction(), "dialog");
 
             }

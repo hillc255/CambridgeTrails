@@ -19,10 +19,14 @@ import java.util.ArrayList;
  */
 public class PeopleFragment extends Fragment {
 
-    /** Handles playback of all the sound files */
+    /**
+     * Handles playback of all the sound files
+     */
     private MediaPlayer mMediaPlayer;
 
-    /** Handles audio focus when playing a sound file */
+    /**
+     * Handles audio focus when playing a sound file
+     */
     private AudioManager mAudioManager;
 
     /**
@@ -72,7 +76,7 @@ public class PeopleFragment extends Fragment {
 
         // Create a list of sites
         final ArrayList<Site> sites = new ArrayList<Site>();
-        sites.add(new Site(getString(R.string.date1), getString(R.string.name1), R.drawable.baldwin,R.raw.people1));
+        sites.add(new Site(getString(R.string.date1), getString(R.string.name1), R.drawable.baldwin, R.raw.people1));
         sites.add(new Site(getString(R.string.date2), getString(R.string.name2), R.drawable.brownc, R.raw.people2));
         sites.add(new Site(getString(R.string.date3), getString(R.string.name3), R.drawable.brownw, R.raw.people3));
         sites.add(new Site(getString(R.string.date4), getString(R.string.name4), R.drawable.clark, R.raw.people4));
@@ -98,7 +102,7 @@ public class PeopleFragment extends Fragment {
         SiteAdapter adapter = new SiteAdapter(getActivity(), sites, R.color.category_people);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        ListView listView = rootView.findViewById(R.id.list);
 
         // Make the {@link ListView} use the {@link SiteAdapter}
         // {@link ListView} will display list items for each {@link Site} in the list.

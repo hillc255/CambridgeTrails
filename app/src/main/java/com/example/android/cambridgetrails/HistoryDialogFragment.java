@@ -10,8 +10,11 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class HistoryDialogFragment extends DialogFragment {
 
+/**
+ * A simple dialog fragment to display history documents
+ */
+public class HistoryDialogFragment extends DialogFragment {
 
     public HistoryDialogFragment() {
     }
