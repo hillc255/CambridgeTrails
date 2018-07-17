@@ -4,7 +4,7 @@
 
 Name: Cambridge Trails or African American Heritage Trail:  Cambridge, MA
 
-This is an Android travel application.
+This is an Android walking trail application.
 
 The purpose of the application is to teach the user about the history of African Americans in Cambridge, MA.  
 
