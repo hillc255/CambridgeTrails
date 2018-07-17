@@ -10,9 +10,9 @@ The purpose of the application is to teach the user about the history of African
 
 The user can click on the People and History fragments to view images and listen to audo clips by clicking on the play button.
 
-The Map fragment allows the user to click on addresses and go to the place where a person lived.  The History fragment uses a Dialog fragment.
+The Map fragment allows the user to click on addresses.  A google map pops up with a marker indicating where a person lived.  
 
-An image of a written page about a person pops up onto the screen when the play button is clicked.
+The History fragment uses a Dialog fragment to display an image of a written page about a person when a button is clicked.
 
 <p align="center">
  <kbd><img width="300" height="532" src="readme_assets/Trails.png"></kbd><kbd><img width="300" height="532" src="readme_assets/Trails2.png"></kbd>
