@@ -61,6 +61,8 @@ public class TimelineFragment extends Fragment {
         }
     };
 
+    //toggle boolean to stop and start mediaplayer
+    boolean isPlaying = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -98,23 +100,31 @@ public class TimelineFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                // Release the media player if it currently exists because we are about to
-                // play a different sound file
-                releaseMediaPlayer();
+                //toggle to stop and start the media player using boolean
+                if (isPlaying) {
+                    mMediaPlayer.pause();
+                } else {
 
-                // Get the {@link Site} object at the given position the user clicked on
-                Site site = sites.get(position);
+                    // Release the media player if it currently exists because we are about to
+                    // play a different sound file
+                    releaseMediaPlayer();
 
-                // Request audio focus so in order to play the audio file.
-                int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
-                        AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+                    // Get the {@link Site} object at the given position the user clicked on
+                    Site site = sites.get(position);
 
-                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    mMediaPlayer = MediaPlayer.create(getActivity(), site.getAudioResourceId());
+                    // Request audio focus so in order to play the audio file.
+                    int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
+                            AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
-                    mMediaPlayer.start();
-                    mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                    if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                        mMediaPlayer = MediaPlayer.create(getActivity(), site.getAudioResourceId());
+
+                        mMediaPlayer.start();
+                        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                    }
                 }
+                //part of toggle to stop and start mediaplayer
+                isPlaying = !isPlaying;
             }
         });
         return rootView;

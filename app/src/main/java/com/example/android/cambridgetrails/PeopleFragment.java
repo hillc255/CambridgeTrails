@@ -65,11 +65,15 @@ public class PeopleFragment extends Fragment {
         }
     };
 
+    //toggle boolean to stop and start mediaplayer
+    boolean isPlaying = false;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.site_list, container, false);
+
 
         // Create and setup the {@link AudioManager} to request audio focus
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
@@ -113,27 +117,33 @@ public class PeopleFragment extends Fragment {
             //    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                // Release the media player if it currently exists because we are about to
-                // play a different sound file
-                releaseMediaPlayer();
+                //toggle to stop and start the media player using boolean
+                if (isPlaying) {
+                    mMediaPlayer.pause();
+                } else {
 
-                // Get the {@link Site} object at the given position the user clicked on
-                Site site = sites.get(position);
+                    // Release the media player if it currently exists because we are about to
+                    // play a different sound file
+                    releaseMediaPlayer();
 
-                // Request audio focus so in order to play the audio file. The app needs to play a
-                // short audio file, so we will request audio focus with a short amount of time
-                // with AUDIOFOCUS_GAIN_TRANSIENT.
-                int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
-                        AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+                    // Get the {@link Site} object at the given position the user clicked on
+                    Site site = sites.get(position);
 
-                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    mMediaPlayer = MediaPlayer.create(getActivity(), site.getAudioResourceId());
+                    // Request audio focus so in order to play the audio file. The app needs to play a
+                    // short audio file, so we will request audio focus with a short amount of time
+                    // with AUDIOFOCUS_GAIN_TRANSIENT.
+                    int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
+                            AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
-                    // Start the audio file
-                    mMediaPlayer.start();
-                    mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                    if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                        mMediaPlayer = MediaPlayer.create(getActivity(), site.getAudioResourceId());
+                        // Start the audio file
+                        mMediaPlayer.start();
+                        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                    }
                 }
-
+                //part of toggle to stop and start mediaplayer
+                isPlaying = !isPlaying;
             }
         });
 
