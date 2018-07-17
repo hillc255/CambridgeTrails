@@ -1,9 +1,8 @@
 # CambridgeTrails
-Android App
 
 ## Synopsis
 
-Name: African American Heritage Trail:  Cambridge, MA
+Name: Cambridge Trails or African American Heritage Trail:  Cambridge, MA
 
 This is an Android travel application.
 
@@ -30,13 +29,13 @@ Source of content:
 
 ## Motivation
 
-This is the fourth exercise in the "Grow with Google - Android Basic Development Nanodegree Scholarship 2018" program with Udacity.
+This is the fifth exercise in the "Grow with Google - Android Basic Development Nanodegree Scholarship 2018" program with Udacity.
 
-The purpose of the exercise is to create "musical structure app." I opted for a app with environmental sounds instead of a albumn covers and songs.
+The purpose of the exercise is to create "musical structuretravel app."
 
 ## Installation
 
-Project can be downloaded from GitHub:  https://github.com/hillc255/MiniScienceQuiz
+Project can be downloaded from GitHub:  https://github.com/hillc255/CambridgeTrails
 
 ## API Reference
 
